@@ -91,6 +91,15 @@ main {
     transform: scale(1.01); /* Slightly enlarge button on hover */
 }
 
+.form--input {
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #B0B4C0;
+    text-indent: 5px;
+}
+
+
+
 .meme {
     position: relative;
     width: 100%;
@@ -100,19 +109,39 @@ main {
     width: 100%;
     height: auto;
     border-radius: 3px;
-    margin-bottom: 20px;
 }
 
 .meme--text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
+    width: 80%;
     text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 20px 0px;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
     color: white;
-    font-size: 1.5em; /* Adjust for mobile */
-    text-shadow: 2px 2px 5px #000033;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000033,
+        -2px -2px 0 #000033,
+        2px -2px 0 #000033,
+        -2px 2px 0 #000033,
+        0 2px 0 #000033,
+        2px 0 0 #000033,
+        0 -2px 0 #000033,
+        -2px 0 0 #000033,
+        2px 2px 5px #000033;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
 }
 
 
