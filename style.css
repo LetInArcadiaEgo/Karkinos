@@ -114,40 +114,38 @@ main {
         padding: 16px;
     }
 
-    .header {
-        height: auto;
-        padding: 10px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
-    .header--image {
-        height: 50px;
-        margin-bottom: 10px;
-    }
+
 
     .header--title {
-        font-size: 1rem;
-        margin-bottom: 10px;
-        margin-bottom: 5px; 
+        font-size: 1.25rem; /* Adjusted font size for smaller screens */
+        margin-bottom: 5px;
     }
 
     .header--project {
         font-size: 0.75rem;
-        margin-top: 5px; 
-
+        margin-top: 5px;
     }
 
     .form {
-        grid-template: auto auto / 1fr;
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        gap: 15px; /* Increased gap between form elements */
+        margin-bottom: 15px; /* Adjusted margin for better spacing */
+    }
+
+    .form--input {
+        font-size: 1rem; /* Adjusted font size for smaller screens */
+        padding: 12px; /* Increased padding for better touch interaction */
     }
 
     .form--button {
-        font-size: 1rem;
+        font-size: 1rem; /* Adjusted font size for smaller screens */
+        padding: 12px 20px; /* Increased padding for better touch interaction */
     }
 
     .meme--text {
-        font-size: 1.5em;
-        width: 90%; 
+        font-size: 1.25em; /* Adjusted text size for smaller screens */
+        width: 90%; /* Adjusted width for better mobile layout */
+        padding: 10px; /* Increased padding for better readability */
     }
 }
