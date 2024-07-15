@@ -4,148 +4,155 @@
 
 body {
     font-family: "Karla", sans-serif;
-    /* max-width: 1200px;  */
-    margin: 0 auto; /* Centers the content horizontally */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main {
-    padding: 36px;
-    max-width: 100%; /* Ensures the main element doesn't exceed the body's max-width */
-    margin: 0 auto; /* Centers the content horizontally */
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .header {
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Added for better distribution of space */
-    height: 65px;
+    justify-content: left;
     background: linear-gradient(90deg, #003366 1.18%, #3399FF 100%);
     color: white;
-    padding: 20px;
-    width: 100%; /* Ensure header spans full width */
-
+    padding: 10px;
 }
 
 .header--image {
-    height: 100%;
-    margin-right: 6px;
+    width: 50px; /* Adjusted size for mobile */
+    margin-left: 20px;
+}
+
+.header--title, .header--project {
+    text-align: left;
+    margin: 5px 0;
 }
 
 .header--title {
     font-size: 1.25rem;
-    margin-right: auto;
 }
 
 .header--project {
     font-size: 0.75rem;
-    font-weight: 500;
+}
 
+.header--image {
+    width: 65px; /* Set the desired width for the image */
+    margin-right: 10px; /* Adds space between the image and the text */
+}
+
+.header {
+    display: flex;
+    flex-direction: row; /* Aligns the children (image and texts) in a row */
+}
+
+.header > *:not(.header--image) {
+    padding: 5px;
 }
 
 .form {
-    display: grid;
-    grid-template: 40px 40px / 1fr 1fr;
-    gap: 17px;
-    margin-bottom: 17px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.form--input {
-    font-family: "Karla", sans-serif;
-    border-radius: 5px;
+.form--input, .form--button {
+    width: 100%;
+    padding: 12px; /* Increased padding for better input field appearance */
     border: 1px solid #B0B4C0;
-    text-indent: 5px;
+    border-radius: 5px; /* Added rounded corners */
 }
 
 .form--button {
-    grid-column: 1 / -1;
-    font-family: "Karla", sans-serif;
-    border-radius: 5px;
     background: linear-gradient(90.41deg, #003366 1.14%, #3399FF 100%);
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 5px; /* Added rounded corners for button */
+    transition: transform 0.3s; /* Smooth transform on click */
+    margin-top: 5px;
+    margin-bottom: 20px; /* Ensure there's space above the button if it follows another element */
+
+}
+
+.form--button:hover {
+    transform: scale(1.01); /* Slightly enlarge button on hover */
 }
 
 .meme {
     position: relative;
-    text-align: center;
+    width: 100%;
 }
 
 .meme--image {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     border-radius: 3px;
+    margin-bottom: 20px;
 }
 
 .meme--text {
     position: absolute;
-    width: 90%; /* Adjust the width as needed */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
     text-align: center;
-    margin: 15px 0;
-    padding: 0 5px;
-    font-family: impact, sans-serif;
-    font-size: 2em;
-    text-transform: uppercase;
     color: white;
-    letter-spacing: 1px;
-    text-shadow:
-        2px 2px 0 #000033,
-        -2px -2px 0 #000033,
-        2px -2px 0 #000033,
-        -2px 2px 0 #000033,
-        0 2px 0 #000033,
-        2px 0 0 #000033,
-        0 -2px 0 #000033,
-        -2px 0 0 #000033,
-        2px 2px 5px #000033;
+    font-size: 1.5em; /* Adjust for mobile */
+    text-shadow: 2px 2px 5px #000033;
 }
 
-.bottom {
-    bottom: 0;
-}
 
-.top {
-    top: 0;
-}
-
-@media (max-width: 600px) {
-    main {
-        padding: 16px;
+@media (min-width: 600px) {
+    .header {
+        display: flex;
+        align-items: center; /* Ensures vertical alignment is centered */
+        padding: 20px;
+        flex-direction: row; /* Aligns items horizontally */
     }
 
-
-
-
-    .header--title {
-        font-size: 1.25rem; /* Adjusted font size for smaller screens */
-        margin-bottom: 5px;
+    .header--image {
+        width: 65px; /* Set the desired width for the image */
+        margin-right: 10px; /* Adds space between the image and the text */
     }
 
-    .header--project {
-        font-size: 0.75rem;
-        margin-top: 5px;
+    .header {
+        display: flex;
+        flex-direction: row; /* Aligns the children (image and texts) in a row */
+    }
+
+    .header > *:not(.header--image) {
+        padding: 5px;
     }
 
     .form {
-        grid-template-columns: 1fr; /* Single column layout for smaller screens */
-        gap: 15px; /* Increased gap between form elements */
-        margin-bottom: 15px; /* Adjusted margin for better spacing */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    .form--input {
-        font-size: 1rem; /* Adjusted font size for smaller screens */
-        padding: 12px; /* Increased padding for better touch interaction */
+    .form--input, .form--button {
+        flex: 1 1 50%; /* Each takes up 50% of the form's width */
     }
 
     .form--button {
-        font-size: 1rem; /* Adjusted font size for smaller screens */
-        padding: 12px 20px; /* Increased padding for better touch interaction */
+        flex: 1 1 100%; /* Button takes full width of the form */
     }
 
     .meme--text {
-        font-size: 1.25em; /* Adjusted text size for smaller screens */
-        width: 90%; /* Adjusted width for better mobile layout */
-        padding: 10px; /* Increased padding for better readability */
+        font-size: 2em; /* Increases the font size for larger screens */
     }
 }

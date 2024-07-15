@@ -7,8 +7,11 @@ export default function Header() {
                 src="./images/face.png" 
                 className="header--image"
             />
-            <h2 className="header--title">Saad's Hell Psyop Meme Generator</h2>
-            <h4 className="header--project">Take over the world with lies and disinfo!</h4>
+            <div className="hopper"> 
+                <h2 className="header--title">Saad's Hell Psyop Meme Generator</h2>
+                
+                <h4 className="header--project">Take over the world with lies and disinfo!</h4>
+            </div>
         </header>
     )
 }
